@@ -5,7 +5,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { toast } from "react-hot-toast";
 
-export default function AddPost() {
+export default function AddPost({ refetch }: any) {
   const [title, setTitle] = useState("");
   const [isDisbled, setIsDisabled] = useState(false);
 
@@ -26,6 +26,7 @@ export default function AddPost() {
         toast.success("Post Created Successfully 🔥");
         setTitle("");
         setIsDisabled(false);
+        refetch();
       },
     }
   );

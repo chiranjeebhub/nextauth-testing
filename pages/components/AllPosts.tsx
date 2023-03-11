@@ -4,22 +4,22 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
 
-export default function AllPosts() {
+export default function AllPosts({ data }: any) {
   // fetch all posts
 
-  const allPosts = async () => {
-    const { data } = await axios.get("/api/posts/getPostsApi");
-    return data;
-  };
+  //   const allPosts = async () => {
+  //     const { data } = await axios.get("/api/posts/getPostsApi");
+  //     return data;
+  //   };
 
-  const { data, error, isLoading, refetch } = useQuery({
-    queryFn: allPosts,
-    queryKey: ["posts"],
-  });
+  //   const { data, error, isLoading, refetch } = useQuery({
+  //     queryFn: allPosts,
+  //     queryKey: ["posts"],
+  //   });
 
-  if (error) return error;
-  if (isLoading) return "Loading...";
-  console.log(data);
+  //   if (error) return error;
+  //   if (isLoading) return "Loading...";
+  //   console.log(data);
   return (
     <div className="">
       {data.map((item: any) => {
