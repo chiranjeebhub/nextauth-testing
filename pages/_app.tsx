@@ -8,7 +8,7 @@ export default function App({
   pageProps: { session, ...pageProps },
 }: AppProps) {
   return (
-    <div>
+    <div className="bg-gray-200 flex flex-col flex-grow">
       <QueryWrapper>
         <SessionProvider session={session}>
           <Component {...pageProps} />

@@ -1,11 +1,10 @@
-"use client";
-
 import Head from "next/head";
 import { Inter } from "next/font/google";
 
 import Login from "./Login";
 import Nav from "./Nav";
 import AddPost from "./components/AddPost";
+import AllPosts from "./components/AllPosts";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +17,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="px-10 py-10 md:mx-48 xl:mx-96 ">
-        <Nav />
-        <AddPost />
+      <main className="px-10 py-10 md:mx-48 xl:mx-96 relative">
+        <div className="sticky top-0">
+          <Nav />
+          <AddPost />
+        </div>
+        <AllPosts />
       </main>
     </>
   );
