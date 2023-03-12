@@ -22,7 +22,7 @@ export default function AllPosts({ data }: any) {
   //   console.log(data);
   return (
     <div className="">
-      {data.map((item: any) => {
+      {data?.map((item: any) => {
         return (
           <div key={item?.id} className="bg-white mb-4 rounded-md p-4">
             <div className="flex items-center pb-5">
